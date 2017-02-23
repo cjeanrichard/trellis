@@ -1,4 +1,78 @@
 ### HEAD
+* Allow for per-project packagist.com authentication ([#762](https://github.com/roots/trellis/pull/762))
+* Set multisite constants false while checking `wp core is-installed` ([#766](https://github.com/roots/trellis/pull/766))
+* Forward extra bin/deploy.sh parameters to ansible-playbook ([#748](https://github.com/roots/trellis/pull/748))
+* Update WP-CLI to 1.1.0 ([#759](https://github.com/roots/trellis/pull/759))
+* Add DOMAIN_CURRENT_SITE to default env variables ([#760](https://github.com/roots/trellis/pull/760))
+* Fix formatting of `set_fact` for `ansible_become_pass` ([#758](https://github.com/roots/trellis/pull/758))
+* Require Ansible 2.2.0.0 or greater ([#726](https://github.com/roots/trellis/pull/726))
+* [BREAKING] Use more secure sshd defaults ([#744](https://github.com/roots/trellis/pull/744))
+* Add basic git repo host keys to `known_hosts` ([#751](https://github.com/roots/trellis/pull/751))
+* Accommodate template inheritance for nginx confs ([#740](https://github.com/roots/trellis/pull/740))
+* Add `apt_packages_custom` to customize Apt packages ([#735](https://github.com/roots/trellis/pull/735))
+* Enable Let's Encrypt to detect updated `site_hosts` ([#630](https://github.com/roots/trellis/pull/630))
+* Add `SKIP_GALAXY` env var to skip galaxy install in Vagrant ([#734](https://github.com/roots/trellis/pull/734))
+* Avoid `loop.first` variable in conditional jinja loops ([#729](https://github.com/roots/trellis/pull/729))
+* Use dynamic `local_path` to accommodate Ansible running on VM ([#725](https://github.com/roots/trellis/pull/725))
+* [BREAKING] Fix #727 - HSTS: default preload to off ([#728](https://github.com/roots/trellis/pull/728))
+* `Vagrantfile`: add automatic support for landrush ([#724](https://github.com/roots/trellis/pull/724))
+* Suppress extra output in SSL certificates ([#723](https://github.com/roots/trellis/pull/723))
+* Fix #718 - improve method of updating theme paths ([#720](https://github.com/roots/trellis/pull/720))
+* Create `/home/vagrant/trellis` bindfs mount with proper permissions ([#705](https://github.com/roots/trellis/pull/705))
+
+### 0.9.9: December 14th, 2016
+* Create `project_shared_children` files if they do not exist ([#706](https://github.com/roots/trellis/pull/706))
+* Diffie-Hellman params now conditional on SSL status ([#709](https://github.com/roots/trellis/pull/709))
+* Update PHP to 7.1 ([#695](https://github.com/roots/trellis/pull/695))
+* Update WP-CLI to 1.0.0 ([#708](https://github.com/roots/trellis/pull/708))
+* Ansible-Local for Vagrant boxes on Windows ([#690](https://github.com/roots/trellis/pull/690))
+* Install MariaDB via Ubuntu's official distro packages ([#693](https://github.com/roots/trellis/pull/693))
+* Fix 404s by moving skip_cache conditions to server block ([#692](https://github.com/roots/trellis/pull/692))
+* Nginx includes: Move templates dir, fix 'No such file' error ([#687](https://github.com/roots/trellis/pull/687))
+* [BREAKING] Move shell scripts to bin/ directory ([#680](https://github.com/roots/trellis/pull/680))
+* Add myhostname to nsswitch.conf to ensure resolvable hostname ([#686](https://github.com/roots/trellis/pull/686))
+* Add `bin/xdebug-tunnel.sh` to manage Xdebug and SSH tunnels on remote hosts ([#678](https://github.com/roots/trellis/pull/678))
+* Move Xdebug installation/configuration into its own role ([#678](https://github.com/roots/trellis/pull/678))
+* Disable wp-cron emails ([#685](https://github.com/roots/trellis/pull/685))
+* Make `raw_vars` compatible with play vars and Ansible 2.1 ([#684](https://github.com/roots/trellis/pull/684))
+* Ensure there is always at least one PHP-FPM pool defined ([#682](https://github.com/roots/trellis/pull/682))
+* Update galaxy roles for Ansible 2.2 compatibility ([#681](https://github.com/roots/trellis/pull/681))
+* Update to WP-CLI 0.25.0 for WP 4.7 compat ([#673](https://github.com/roots/trellis/pull/673))
+* Enable per-site setup for permalink structure ([#661](https://github.com/roots/trellis/pull/661))
+* WP 4.6 Compat: set WP_HOME/SITEURL directly ([#647](https://github.com/roots/trellis/pull/647))
+* Create WordPress php-fpm conf after web_root exists ([#642](https://github.com/roots/trellis/pull/642))
+* Fix #637 - Fix condition for permalink structure task ([#643](https://github.com/roots/trellis/pull/643))
+* Fix #639 - WP 4.6 compatibility: update WP-CLI to 0.24.1 ([#640](https://github.com/roots/trellis/pull/640))
+
+### 0.9.8: August 14th, 2016
+* Ansible 2.1 compatibility fixes ([#631](https://github.com/roots/trellis/pull/631))
+* [BREAKING] Upgrade Ubuntu from 14.04 Trusty to 16.04 Xenial ([#626](https://github.com/roots/trellis/pull/626))
+* [BREAKING] Add `vault_users` for easier password management ([#614](https://github.com/roots/trellis/pull/614))
+* Fix #581 - Use WP-CLI to run WP cron ([#583](https://github.com/roots/trellis/pull/583))
+* [BREAKING] Require explicit redirects and drop `www_redirect` ([#622](https://github.com/roots/trellis/pull/622))
+* Fix #612 - Bump nginx_fastcgi_buffer_size to `8k` ([#620](https://github.com/roots/trellis/pull/620))
+* Setup permalink structure for multisite installs too ([#617](https://github.com/roots/trellis/pull/617))
+* Fix `wp_home` option in Multisite after install in development ([#616](https://github.com/roots/trellis/pull/616))
+* Add `current_path` var and default to enable custom current release path ([#607](https://github.com/roots/trellis/pull/607))
+* Add Vagrant post up message ([#602](https://github.com/roots/trellis/pull/602))
+* Fix #468 - Use curl to install wp-cli tab completions ([#593](https://github.com/roots/trellis/pull/593))
+* Require Ansible 2.0.2 and remove deploy_helper ([#579](https://github.com/roots/trellis/pull/579))
+* Add connection-related cli options to ping command ([#578](https://github.com/roots/trellis/pull/578))
+* Wrap my.cnf password in quotes ([#577](https://github.com/roots/trellis/pull/577))
+* Update to WP-CLI v0.23.1 ([#576](https://github.com/roots/trellis/pull/576))
+* Fix #563 - Improve remote databases ([#573](https://github.com/roots/trellis/pull/573))
+* Fix #569 - Only skip subdomains for non-www domains ([#570](https://github.com/roots/trellis/pull/570))
+* Enable Let's Encrypt to transition http sites to https ([#565](https://github.com/roots/trellis/pull/565))
+
+### 0.9.7: April 10th, 2016
+* Fix #550 - Properly skip permalink setup for MU ([#551](https://github.com/roots/trellis/pull/551))
+* Escape salts and keys to avoid templating errors ([#548](https://github.com/roots/trellis/pull/548))
+* Add plugin to pretty print Ansible msg output ([#544](https://github.com/roots/trellis/pull/544))
+* Fix #482 - Multisite is-installed deploy check ([#543](https://github.com/roots/trellis/pull/543))
+* Skip setting permalink for multisite installs ([#546](https://github.com/roots/trellis/pull/546))
+* Fix #489 - Add $realpath_root to fastcgi_cache_key ([#542](https://github.com/roots/trellis/pull/542))
+* Move modules and plugins to `lib/trellis` directory ([#538](https://github.com/roots/trellis/pull/538))
+* Automatically set `wp_home` and `wp_siteurl` variables ([#533](https://github.com/roots/trellis/pull/533))
 * Switch to Let's Encrypt X3 intermediate certificate and fix chain issues ([#534](https://github.com/roots/trellis/pull/534))
 * Supply better defaults for `db_name` and `db_user` ([#529](https://github.com/roots/trellis/pull/529))
 * Fix deploy env template to use valid ansible vars ([#530](https://github.com/roots/trellis/pull/530))
@@ -114,7 +188,7 @@
 * Fix PHP error handling
 * Flush wp db theme roots on deploy
 * Stop recursive copying of vendor
-* Update the windows.sh script with absolute path
+* Update the bin/windows.sh script with absolute path
 * Conditionally copy .env into web root
 * Add subtree commented out
 * Add Composer binary path to the default path
